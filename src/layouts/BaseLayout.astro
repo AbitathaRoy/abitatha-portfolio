@@ -1,0 +1,59 @@
+
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Abitatha Roy — Research & Computing",
+  description = "Academic and technical portfolio exploring quantitative research, statistics, data science, and computational methods.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F8F7F4" />
+    <meta name="description" content={description} />
+
+    <title>{title}</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+
+  <body id="top">
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Abitatha Roy, home">
+        AR<span>.</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="/#research">Research Interests</a>
+        <a class="nav-secondary" href="/#projects">Research Projects</a>
+        <a class="nav-secondary" href="/#about">About</a>
+        <a class="nav-contact" href="/#contact">
+          Get in touch <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />  {/* The place where the content of each page will be */}
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="/" aria-label="Back to home">
+        AR<span>.</span>
+      </a>
+
+      <span>Designed & developed by Abitatha Roy.</span>
+
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
